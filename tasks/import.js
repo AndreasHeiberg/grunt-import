@@ -59,7 +59,7 @@ module.exports = function(grunt) {
         var importRecursive = function(filepath)
         {
             var src = grunt.file.read(filepath);
-            var importReg = src.match(/@import ['"](.*)['"]/g);
+            var importReg = src.match(/(?<!(\/\/)|(\/\/\s))@import ['"](.*)['"]/g);
 
             if(importReg && importReg.length)
             {
